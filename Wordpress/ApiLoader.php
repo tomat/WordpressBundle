@@ -127,6 +127,8 @@ class ApiLoader
             $_SERVER['HTTP_HOST'] = $this->httpHost;
         }
 
+        remove_filter('shutdown', 'wp_ob_end_flush_all', 1);
+
         return $returnValue;
     }
 
